@@ -1,0 +1,4 @@
+#!/bin/bash
+# compileall: module. Can work as a script (use flag -m) to compile Python sources
+/usr/bin/python3 -m compileall -b $PYFILE
+# flag -b: compiles its source code into "byte code"
