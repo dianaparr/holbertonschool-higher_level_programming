@@ -6,6 +6,10 @@ def new_in_list(my_list, idx, element):
     else:
         # Create a copy of the list original, my_list[:]
         # represents the complete list
-        list_two = my_list[:]
-        list_two[idx] = element
+        list_two = []
+        for e in range(0, len_my_list):
+            if e == idx:
+                list_two.append(element)
+            else:
+                list_two.append(my_list[e])
         return list_two
