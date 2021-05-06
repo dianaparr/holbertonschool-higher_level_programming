@@ -1,9 +1,8 @@
 #!/usr/bin/python3
 def multiple_returns(sentence):
-    if len(sentence) == "":
-        tuple_two = len(sentence), None
-        return tuple_two
+    if sentence == "":
+        tuple_two = (len(sentence), None)
     else:
         # other form represents position 0 of the string with splice
         tuple_two = len(sentence), sentence[:1]
-        return tuple_two
+    return tuple_two
