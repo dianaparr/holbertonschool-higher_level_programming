@@ -12,7 +12,7 @@ int is_palindrome(listint_t **head)
 	int array_list[BUFSIZ];
 
 	if (*head == NULL)
-		return (0);
+		return (1);
 	while (ptr_temp != NULL)
 	{
 		/* fill array */
