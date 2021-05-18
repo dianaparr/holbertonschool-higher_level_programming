@@ -4,6 +4,6 @@
 
 
 class Square:
+    """ 'size' is a attribute type private """
     def __init__(self, size):
-        """ 'size' is a attribute type private """
         self.__size = size
