@@ -1,7 +1,4 @@
 #!/usr/bin/python3
-from typing import Type
-
-
 class Square:
     def __init__(self, size=0):
         # other way: type(size) != int
