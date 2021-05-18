@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-""" Constructor method to initialize the attributes of the
-    instantiated object 'size' """
+""" Define a class called Square """
 
 
 class Square:
-    """ 'size' is a attribute type private """
+    """ Constructor method to initialize the attributes of the
+    instantiated object 'size' """
     def __init__(self, size):
         self.__size = size
