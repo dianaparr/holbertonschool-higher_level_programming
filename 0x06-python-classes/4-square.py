@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+""" Define a class called Square """
+
+
 class Square:
+    """ Constructor method to initialize the attributes of the
+        instantiated object 'size' """
     def __init__(self, size=0):
         self.size = size
 
@@ -19,4 +24,6 @@ class Square:
             self.__size = size
 
     def area(self):
+        """ This class method returns the square of what is
+            in the attribute 'size' """
         return self.__size ** 2
