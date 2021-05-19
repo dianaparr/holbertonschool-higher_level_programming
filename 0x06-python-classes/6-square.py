@@ -42,8 +42,8 @@ class Square:
             if type(value) is not tuple or len(value) != 2\
                  or type(value[0]) is not int\
                  or type(value[1]) is not int or t < 0:
-                raise TypeError("position must be a tuple\
-                     of 2 positive integers")
+                raise TypeError(
+                    "position must be a tuple of 2 positive integers")
 
     def area(self):
         """ This class method returns the square of what is
