@@ -59,14 +59,15 @@ class Square:
             the private attribute '__size'
 
             Add condition if position in index 1 is greater than zero """
-        if self.__position[1] > 0:
-            for i in range(0, self.__position[1]):
+        if self.__size != 0:
+            if self.__position[1] > 0:
+                for i in range(0, self.__position[1]):
+                    print("")
+            for x in range(0, self.__size):
+                for j in range(0, self.__position[0]):
+                    print(" ", end="")
+                for y in range(0, self.__size):
+                    print("#", end="")
                 print("")
-        for x in range(0, self.__size):
-            for j in range(0, self.__position[0]):
-                print(" ", end="")
-            for y in range(0, self.__size):
-                print("#", end="")
-            print("")
-        if self.__size == 0:
+        else:
             print("")
