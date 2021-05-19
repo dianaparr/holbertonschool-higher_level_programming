@@ -39,7 +39,7 @@ class Square:
         self.__position = value
         for t in value:
             # conditions: type tuple, to integers positives (t > 0)
-            if type(value) is not tuple or len(value) < 2\
+            if type(value) is not tuple or len(value) != 2\
                  or type(value[0]) is not int\
                  or type(value[1]) is not int or t < 0:
                 raise TypeError("position must be a tuple\
@@ -57,8 +57,15 @@ class Square:
             Is a nested loop for printing.
 
             The print range will be up to the value of
-            the private attribute '__size' """
+            the private attribute '__size'
+
+            Add condition if position in index 1 is greater than zero """
+        if self.__position[1] > 0:
+            for i in range(0, self.__position[1]):
+                print("")
         for x in range(0, self.__size):
+            for j in range(0, self.__position[0]):
+                print(" ", end="")
             for y in range(0, self.__size):
                 print("#", end="")
             print("")
