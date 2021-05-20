@@ -40,6 +40,10 @@ class Rectangle:
         else:
             self.__width = value
 
+    """ Two class methods: area and perimeter, which return
+        the indicated operation.
+
+        They give functionality to the class attributes """
     def area(self):
         # return area of the rectangle: A = b*h (base*altura or width*height)
         return self.__width * self.__height
