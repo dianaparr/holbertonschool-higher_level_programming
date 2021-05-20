@@ -67,5 +67,5 @@ class Rectangle:
                     print_symbol += '#'
                 print_symbol += '\n'
             # The function rstrip() to remove the line break from
-            # a string. 
+            # a string.
             return print_symbol.rstrip()
