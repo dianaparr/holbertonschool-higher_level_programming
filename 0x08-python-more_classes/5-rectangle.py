@@ -79,5 +79,7 @@ class Rectangle:
         # to the string created.
         return f'{self.__class__.__name__}({self.width}, {self.height})'
 
+    """ The special method __del__ is used to destroy an instance and a
+        message is printed when the instance has been deleted. """
     def __del__(self):
         return print(f'Bye rectangle...')
