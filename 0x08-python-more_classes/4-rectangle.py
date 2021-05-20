@@ -71,4 +71,6 @@ class Rectangle:
             return print_symbol.rstrip()
 
     def __repr__(self):
-        return repr("Rectangle: ({}, {})".format(self.__width, self.__height))
+        # self.__class__.__name__ : automatically adds the name of the class
+        # to the string created.
+        return f'{self.__class__.__name__}({self.width}, {self.height})'
