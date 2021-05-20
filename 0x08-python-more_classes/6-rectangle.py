@@ -9,6 +9,10 @@ class Rectangle:
         Args:
             param1 (width): Is a private attribute, type int
             param2 (height): Is a private attribute, type int
+
+        It makes use of an instance counter called number_of_instances
+        that increases each time a new instance is created and decreases
+        when it is being deleted.
         """
     # public class attribute
     number_of_instances = 0
