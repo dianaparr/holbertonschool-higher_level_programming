@@ -67,9 +67,13 @@ class Rectangle:
                     print_symbol += '#'
                 print_symbol += '\n'
             # The function rstrip() to remove the line break from
-            # a string. 
+            # a string.
             return print_symbol.rstrip()
 
+    """ Use of the special method __repr__ that returns a string
+        representation of the rectangle.
+
+        It's purpose is to recreate a new instance using eval() """
     def __repr__(self):
         # self.__class__.__name__ : automatically adds the name of the class
         # to the string created.
