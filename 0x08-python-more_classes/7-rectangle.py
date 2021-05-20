@@ -14,8 +14,9 @@ class Rectangle:
         that increases each time a new instance is created and decreases
         when it is being deleted.
         """
-    # public class attribute
+    # public class attributes
     number_of_instances = 0
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         self.height = height
@@ -72,7 +73,7 @@ class Rectangle:
             print_symbol = ""
             for j in range(self.__height):
                 for i in range(self.__width):
-                    print_symbol += '#'
+                    print_symbol += Rectangle.print_symbol
                 print_symbol += '\n'
             # The function rstrip() to remove the line break from
             # a string.
