@@ -55,6 +55,8 @@ class Rectangle:
         else:
             return (2 * self.__width) + (2 * self.__height)
 
+    """ Use of the special method __str__ that returns a string
+        with what you want to show, for example, to an end user """
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
@@ -62,6 +64,8 @@ class Rectangle:
             print_symbol = ""
             for j in range(self.__height):
                 for i in range(self.__width):
-                    print_symbol += "#"
+                    print_symbol += '#'
                 print_symbol += "\n"
-            return print_symbol
+            # The function rstrip() to remove the line break from
+            # a string. 
+            return print_symbol.rstrip()
