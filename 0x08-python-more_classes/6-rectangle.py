@@ -10,9 +10,13 @@ class Rectangle:
             param1 (width): Is a private attribute, type int
             param2 (height): Is a private attribute, type int
         """
+    # public class attribute
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.height = height
         self.width = width
+        type(self).number_of_instances += 1
 
     @property
     def height(self):
@@ -82,4 +86,5 @@ class Rectangle:
     """ The special method __del__ is used to destroy an instance and a
         message is printed when the instance has been deleted. """
     def __del__(self):
+        type(self).number_of_instances -= 1
         return print(f'Bye rectangle...')
