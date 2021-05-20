@@ -69,3 +69,6 @@ class Rectangle:
             # The function rstrip() to remove the line break from
             # a string. 
             return print_symbol.rstrip()
+
+    def __repr__(self):
+        return repr("Rectangle: ({}, {})".format(self.__width, self.__height))
