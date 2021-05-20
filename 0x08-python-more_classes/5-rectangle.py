@@ -78,3 +78,6 @@ class Rectangle:
         # self.__class__.__name__ : automatically adds the name of the class
         # to the string created.
         return f'{self.__class__.__name__}({self.width}, {self.height})'
+
+    def __del__(self):
+        return print(f'Bye rectangle...')
