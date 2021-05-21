@@ -2,9 +2,6 @@
 """ Create a class called Rectangle """
 
 
-from typing import TYPE_CHECKING, Type
-
-
 class Rectangle:
     """ Constructor method to initialize the attribute of the
         instantiated object with two optionals parameters:
@@ -35,8 +32,10 @@ class Rectangle:
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
-        else:
+        if Rectangle.area(rect_1) >= Rectangle.area(rect_2):
             return rect_1
+        else:
+            return rect_2
 
     @property
     def height(self):
@@ -47,7 +46,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("height must be an integer")
         if value < 0:
-            raise TypeError("height must be >= 0")
+            raise ValueError("height must be >= 0")
         else:
             self.__height = value
 
@@ -60,7 +59,7 @@ class Rectangle:
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value < 0:
-            raise TypeError("width must be >= 0")
+            raise ValueError("width must be >= 0")
         else:
             self.__width = value
 
