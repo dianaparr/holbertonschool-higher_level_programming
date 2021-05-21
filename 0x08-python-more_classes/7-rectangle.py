@@ -73,7 +73,7 @@ class Rectangle:
             print_symbol = ""
             for j in range(self.__height):
                 for i in range(self.__width):
-                    print_symbol += Rectangle.print_symbol
+                    print_symbol += str(self.print_symbol)
                 print_symbol += '\n'
             # The function rstrip() to remove the line break from
             # a string.
