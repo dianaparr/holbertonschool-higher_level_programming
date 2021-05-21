@@ -55,8 +55,10 @@ class Rectangle:
     @classmethod
     def square(cls, size=0):
         new_rect = cls()
+        new_rect.width = size
+        new_rect.height = size
         return new_rect
-    
+
     @staticmethod
     def bigger_or_equal(rect_1, rect_2):
         if not isinstance(rect_1, Rectangle):
