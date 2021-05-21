@@ -13,6 +13,9 @@ class Rectangle:
         It makes use of an instance counter called number_of_instances
         that increases each time a new instance is created and decreases
         when it is being deleted.
+
+        The print_symbol class attribute is used so that it is obtained
+        during printing and changes the symbol it prints.
         """
     # public class attributes
     number_of_instances = 0
