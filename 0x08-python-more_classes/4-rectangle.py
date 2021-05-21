@@ -77,4 +77,5 @@ class Rectangle:
     def __repr__(self):
         # self.__class__.__name__ : automatically adds the name of the class
         # to the string created.
-        return f'{self.__class__.__name__}({self.width}, {self.height})'
+        return "{self.__class__.__name__}\
+({self.width}, {self.height})".format(self=self)
