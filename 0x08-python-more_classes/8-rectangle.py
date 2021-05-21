@@ -100,10 +100,11 @@ class Rectangle:
     def __repr__(self):
         # self.__class__.__name__ : automatically adds the name of the class
         # to the string created.
-        return f'{self.__class__.__name__}({self.width}, {self.height})'
+        return "{self.__class__.__name__}\
+({self.width}, {self.height})".format(self=self)
 
     """ The special method __del__ is used to destroy an instance and a
         message is printed when the instance has been deleted. """
     def __del__(self):
         type(self).number_of_instances -= 1
-        return print(f'Bye rectangle...')
+        return print("Bye rectangle...")
