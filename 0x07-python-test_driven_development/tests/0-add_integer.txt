@@ -1,0 +1,14 @@
+Function that addition integers
+=================================
+
+Using ``add_integer``
+---------------------------------
+
+Import the add_integer module:
+
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+Test cases:
+
+    >>> add_integer(1, 2)
+    3
