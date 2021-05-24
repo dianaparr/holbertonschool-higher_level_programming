@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" Function that addition integers"""
+"""
+Function that addition integers
+"""
 
 
 def add_integer(a, b=98):
