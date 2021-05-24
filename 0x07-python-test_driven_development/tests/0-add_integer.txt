@@ -1,6 +1,8 @@
+=================================
 Function that addition integers
 =================================
 
+---------------------------------
 Using ``add_integer``
 ---------------------------------
 
@@ -10,5 +12,17 @@ Import the add_integer module:
 
 Test cases:
 
-    >>> add_integer(1, 2)
-    3
+    >>> add_integer(9, 3)
+    12
+
+    >>> add_integer(-8, -5)
+    -13
+
+    >>> add_integer(-5.0, 6)
+    1
+
+    >>> add_integer(10.8, 4)
+    14
+
+    >>> add_integer(8)
+    106
