@@ -1,14 +1,16 @@
 #!/usr/bin/python3
 """ Function that addition integers"""
+
+
 def add_integer(a, b=98):
     """ Function that returns the sum of two integers
 
         Parameters:
             a (int): a number int
             b=98 (int): another number int
-        
+
         Returns:
-            casted_numbers: casted to integers if they 
+            casted_numbers: casted to integers if they
                             are float and return addition
                             of a and b
     """
