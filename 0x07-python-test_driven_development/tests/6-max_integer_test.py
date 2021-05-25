@@ -5,14 +5,15 @@ Import unittest and created a class for unit test
 import unittest
 max_integer = __import__('6-max_integer').max_integer
 
+
 class TestMaxInteger(unittest.TestCase):
     """ Class called TestMaxInteger. This would be a subclass of
-        the TestCase class of the unittest module. 
+        the TestCase class of the unittest module.
     """
     def test_max_integer(self):
         """ Method representing tests. In this case, which return
             the max integer in a list of integers.
-        
+
         Methods of the class TestCase:
             assertEqual: make sure they are equal
             assertNotEqual: make sure they are not the same
