@@ -13,11 +13,21 @@ def text_indentation(text):
     """
     if type(text) is not str:
         raise TypeError("text must be a string")
+    state = True
     i = 0
     while i in range(len(text)):
-        if text[i] == '?' or text[i] == '.' or text[i] == ':':
-            print("{}{}".format(text[i], '\n'))
+        if text[i] == " " and state is True:
+            i += 1                    #remove spaces at the begginning
+            continue
+        elif text[i] == " " and text[i + 1] == " ":
+            state = True                #remove spaces at the end
             i += 1
+            continue
+        elif text[i] == '?' or text[i] == '.' or text[i] == ':':
+            state = False             #remove spaces before the line break
+            print("{}{}".format(text[i], '\n'))
+            i += 2
         else:
+            state = False
             print("{}".format(text[i]), end="")
-        i += 1
+            i += 1
