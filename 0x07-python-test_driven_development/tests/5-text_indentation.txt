@@ -23,6 +23,24 @@ Test cases:
     <BLANKLINE>
     five people
 
+    >>> text_indentation("                  Hello, everyone. How are you?")
+    Hello, everyone.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+
+    >>> text_indentation("The finish.                    ")
+    The finish.
+    <BLANKLINE>
+
+    >>> text_indentation("           The finish without symbol                    ")
+    The finish without symbol
+
+    >>> text_indentation("    ?       The finish without symbol                    ")
+    ?
+    <BLANKLINE>
+    The finish without symbol
+
     >>> text_indentation(16793)
     Traceback (most recent call last):
         ...
