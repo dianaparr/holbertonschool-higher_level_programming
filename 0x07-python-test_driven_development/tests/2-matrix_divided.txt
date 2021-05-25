@@ -1,0 +1,35 @@
+===============================================
+Function that divides all elements of a matrix
+===============================================
+
+---------------------------------
+Using function ``matrix_divided``
+---------------------------------
+
+Import the matrix_divided module:
+
+    >>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Test cases:
+
+    >>> matrix_divided([[10.5, -40, 6], [2, -8.04, 3.584]], 0)
+    Traceback (most recent call last):
+        ...
+    ZeroDivisionError: division by zero
+
+    >>> matrix_divided([[10.5, -40, 6], [2, -8.04, 3.584]], 2)
+    [[5.25, -20.0, 3.0], [1.0, -4.02, 1.79]]
+
+    >>> matrix_divided([[10.5, -40, 6], [2, -8.04, 3.584]], 4.567)
+    [[2.3, -8.76, 1.31], [0.44, -1.76, 0.78]]
+
+    >>> matrix_divided([[10.5, -40, 6], [2]], 2)
+    Traceback (most recent call last):
+        ...
+    TypeError: Each row of the matrix must have the same size
+
+    >>> matrix_divided([[10.5, -40, 6], [2, -8.04, 3.584]], "H")
+    Traceback (most recent call last):
+        ...
+    TypeError: div must be a number
+    
