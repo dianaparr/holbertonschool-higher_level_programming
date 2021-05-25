@@ -1,0 +1,34 @@
+==============================
+Function that prints a string
+==============================
+
+---------------------------------
+Using function ``say_my_name``
+---------------------------------
+
+Import the say_my_name module:
+
+    >>> say_my_name = __import__('3-say_my_name').say_my_name
+
+Test cases:
+
+    >>> say_my_name("Juana", "Pérez")
+    My name is Juana Pérez
+
+    >>> say_my_name("Camila")
+    My name is Camila 
+
+    >>> say_my_name("Tres", 3)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name("Juana", None)
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+    >>> say_my_name(None, "Pérez")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
