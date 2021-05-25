@@ -1,0 +1,34 @@
+==============================
+Function that prints a text
+==============================
+
+---------------------------------
+Using function ``text_indentation``
+---------------------------------
+
+Import the print_square module:
+
+    >>> text_indentation = __import__('5-text_indentation').text_indentation
+
+Test cases:
+
+    >>> text_indentation("Hello, everyone. How are you?")
+    Hello, everyone.
+    <BLANKLINE>
+    How are you?
+    <BLANKLINE>
+
+    >>> text_indentation("We are: five people")
+    We are:
+    <BLANKLINE>
+    five people
+
+    >>> text_indentation(16793)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+    >>> text_indentation()
+    Traceback (most recent call last):
+        ...
+    TypeError: text_indentation() missing 1 required positional argument: 'text'
