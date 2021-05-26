@@ -16,15 +16,18 @@ def text_indentation(text):
     state = True
     i = 0
     while i in range(len(text)):
+        # remove spaces at the begginning
         if text[i] == " " and state is True:
-            i += 1                    #remove spaces at the begginning
-            continue
-        elif text[i] == " " and text[i + 1] == " ":
-            state = True                #remove spaces at the end
             i += 1
             continue
+        # remove spaces at the end
+        elif text[i] == " " and text[i + 1] == " ":
+            state = True
+            i += 1
+            continue
+        # remove spaces before the line break
         elif text[i] == '?' or text[i] == '.' or text[i] == ':':
-            state = False             #remove spaces before the line break
+            state = False
             print("{}{}".format(text[i], '\n'))
             i += 2
         else:
