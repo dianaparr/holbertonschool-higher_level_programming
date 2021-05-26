@@ -25,6 +25,18 @@ Test cases:
     >>> matrix_divided(matrix, 4.567)
     [[2.3, -8.76, 1.31], [0.44, -1.76, 0.78]]
 
+    >>> matrix_divided([[float('InFiNiTy'), -40, 6], [2, -8.04, 3.584]], 2)
+    [[inf, -20.0, 3.0], [1.0, -4.02, 1.79]]
+    
+    >>> matrix_divided([[2, -40, 6], [2, -8.04, 3.584]], float('InFiNiTy'))
+    [[0.0, -0.0, 0.0], [0.0, -0.0, 0.0]]
+
+    >>> matrix_divided([[float('nan'), -40, 6], [2, -8.04, 3.584]], 2)
+    [[nan, -20.0, 3.0], [1.0, -4.02, 1.79]]
+
+    >>> matrix_divided([[2, -40, 6], [2, -8.04, 3.584]], 35e3)
+    [[0.0, -0.0, 0.0], [0.0, -0.0, 0.0]]
+
     >>> matrix_divided(matrix, "H")
     Traceback (most recent call last):
         ...
@@ -54,3 +66,32 @@ Test cases:
     Traceback (most recent call last):
         ...
     TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+    >>> matrix_divided([[], []], 2)
+    [[], []]
+
+-------------
+Requirements
+-------------
+
+pep8 style:
+
+    >>> import os
+    >>> os.popen("pep8 2-matrix_divided.py").read()
+    ''
+
+Shebang at the beginning of the line:
+
+    >>> import os
+    >>> os.popen("head -1 2-matrix_divided.py").read()
+    '#!/usr/bin/python3\n'
+
+Module documentation:
+
+    >>> __import__("2-matrix_divided").__doc__ != 0
+    True
+
+Function documentation:
+
+    >>> __import__("2-matrix_divided").matrix_divided.__doc__ != 0
+    True
