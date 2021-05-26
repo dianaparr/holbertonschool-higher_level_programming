@@ -30,7 +30,8 @@ matrix must be a matrix (list of lists) of integers/floats")
 matrix must be a matrix (list of lists) of integers/floats")
         list_result = []
         for y in range(len(matrix[x])):
-            if type(y) is not int and type(y) is not float:
+            if type(matrix[x][y]) is not int and\
+                    type(matrix[x][y]) is not float:
                 raise TypeError("\
 matrix must be a matrix (list of lists) of integers/floats")
             if len(matrix[x]) != len(matrix[0]):
