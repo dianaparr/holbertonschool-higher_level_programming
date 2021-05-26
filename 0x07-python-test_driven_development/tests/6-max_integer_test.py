@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""
-Import unittest and created a class for unit test
+"""Import unittest and created a class for unit test
 """
 import unittest
 max_integer = __import__('6-max_integer').max_integer
@@ -26,6 +25,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer([8]), 8)
         self.assertEqual(max_integer((6, 7, 8)), 8)
+        self.assertEqual(max_integer(["jaskmamsns", "aaaaaaaaa\
+aaaaaaskmamsns"]), "jaskmamsns")
         with self.assertRaises(TypeError):
             max_integer([86, 87.455, "h"])
         with self.assertRaises(TypeError):
