@@ -25,6 +25,7 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer([]), None)
         self.assertEqual(max_integer([8]), 8)
         self.assertEqual(max_integer((6, 7, 8)), 8)
+        self.assertEqual(max_integer((1, 2, 4, 3)), 4)
         self.assertEqual(max_integer(["jaskmamsns", "aaaaaaaaa\
 aaaaaaskmamsns"]), "jaskmamsns")
         with self.assertRaises(TypeError):
