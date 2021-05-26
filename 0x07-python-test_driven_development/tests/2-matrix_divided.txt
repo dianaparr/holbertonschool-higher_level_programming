@@ -25,7 +25,7 @@ Test cases:
     >>> matrix_divided(matrix, 4.567)
     [[2.3, -8.76, 1.31], [0.44, -1.76, 0.78]]
 
-    >>> matrix_divided([[2, "cuarenta", 6], [2, -8.04, 3.584]], 2)
+    >>> matrix_divided([[2, "cuarenta", 6], [2, 8, 3]], 2)
     Traceback (most recent call last):
         ...
     TypeError: unsupported operand type(s) for /: 'str' and 'int'
