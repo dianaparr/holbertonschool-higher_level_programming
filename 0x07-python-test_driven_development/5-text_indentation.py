@@ -33,4 +33,5 @@ def text_indentation(text):
         else:
             state = False
             print("{}".format(text[i]), end="")
+            print(end="")
             i += 1

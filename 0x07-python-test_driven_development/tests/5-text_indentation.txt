@@ -43,6 +43,11 @@ Test cases:
     <BLANKLINE>
     The finish without symbol
 
+    >>> text_indentation("Hola.Vamos")
+    Hola.
+    <BLANKLINE>
+    amos
+
     >>> text_indentation(16793)
     Traceback (most recent call last):
         ...
