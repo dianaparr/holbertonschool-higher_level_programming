@@ -46,7 +46,7 @@ Test cases:
     >>> text_indentation("Hola.Vamos")
     Hola.
     <BLANKLINE>
-    amos
+    Vamos
 
     >>> text_indentation(16793)
     Traceback (most recent call last):
