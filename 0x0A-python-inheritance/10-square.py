@@ -29,5 +29,5 @@ class Square(Rectangle):
     """ Use of the special method __str__ that returns a string
         with what you want to show, for example, to an end user """
     def __str__(self):
-        show_mssg = f"[Rectangle] {self.__size}/{self.__size}"
+        show_mssg = "[Rectangle] {}/{}".format(self.__size, self.__size)
         return show_mssg
