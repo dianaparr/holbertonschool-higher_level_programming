@@ -32,5 +32,5 @@ class Rectangle(BaseGeometry):
     """ Use of the special method __str__ that returns a string
         with what you want to show, for example, to an end user """
     def __str__(self):
-        show_mssg = f"[Rectangle] {self.__width}/{self.__height}"
+        show_mssg = "[Rectangle] {}/{}".format(self.__width, self.__height)
         return show_mssg
