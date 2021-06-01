@@ -5,11 +5,11 @@ Define a class called MyList that inherits from list
 
 
 class MyList(list):
-    """ 
-    Declare a public instance method 
+    """
+    Declare a public instance method
     """
     def print_sorted(self):
-        """ Function that prints the list sorted 
+        """ Function that prints the list sorted
 
             Parameters:
                     self: iterable object
