@@ -20,7 +20,6 @@ class Square(Rectangle):
         super().integer_validator("size", size)
         self.__size = size
 
-
     """ Public instance method that return
         the area of a square
     """
@@ -32,4 +31,3 @@ class Square(Rectangle):
     def __str__(self):
         show_mssg = f"[Rectangle] {self.__size}/{self.__size}"
         return show_mssg
-
