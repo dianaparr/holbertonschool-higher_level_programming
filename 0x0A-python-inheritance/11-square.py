@@ -31,4 +31,3 @@ class Square(Rectangle):
     def __str__(self):
         show_mssg = "[Square] {}/{}".format(self.__size, self.__size)
         return show_mssg
-
