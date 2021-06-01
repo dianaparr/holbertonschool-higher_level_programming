@@ -17,8 +17,8 @@ class Rectangle(BaseGeometry):
             param2 (height): Is a private attribute
     """
     def __init__(self, width, height):
-        self.__width = width
         # super().__init__(name, value)
         super().integer_validator("width", width)
-        self.__height = height
+        self.__width = width
         super().integer_validator("height", height)
+        self.__height = height
