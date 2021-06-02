@@ -19,5 +19,5 @@ def save_to_json_file(my_obj, filename):
           bool, list, dictionaries and None
     """
     with open(filename, mode='w', encoding='UTF8') as f:
-        string_json = f.write(json.dumps(my_obj))
+        string_json = json.dump(my_obj, f)
     return string_json
