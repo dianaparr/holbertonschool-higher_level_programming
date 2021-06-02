@@ -2,6 +2,8 @@
 """
 Function that writes a string to a text file
 """
+
+
 def write_file(filename="", text=""):
     """ Write in the file
         Create the file if doesn't exist and
