@@ -3,7 +3,7 @@
 
 
 class MyInt(int):
-    """ 
+    """
         Reverse the normal order of what comparasion
         operators do
         Use of rich comparasion methods
