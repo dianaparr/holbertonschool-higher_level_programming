@@ -1,0 +1,78 @@
+=============================================
+Function that validates a value as an integer
+=============================================
+
+------------------------------------
+Using function ``integer_validator``
+------------------------------------
+
+Import the class BaseGeometry:
+
+    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Basic cases:
+
+    - Value correct:
+    >>> test_geo = BaseGeometry()
+    >>> test_geo.integer_validator("name", 56)
+
+    - Type value incorrect:
+    >>> test_geo = BaseGeometry()
+    >>> test_geo.integer_validator("name", "value")
+    Traceback (most recent call last):
+        ...
+    TypeError: name must be an integer
+
+    - Value error:
+    >>> test_geo = BaseGeometry()
+    >>> test_geo.integer_validator("name", -8)
+    Traceback (most recent call last):
+        ...
+    ValueError: name must be greater than 0
+
+    - Value equal zero:
+    >>> test_geo = BaseGeometry()
+    >>> test_geo.integer_validator("name", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: name must be greater than 0
+
+-------------
+Requirements
+-------------
+
+README Create and not empty:
+
+    >>> import os
+    >>> os.path.exists('README.md')
+    True
+
+pep8 style:
+
+    >>> import os
+    >>> os.popen("pep8 7-base_geometry.py").read()
+    ''
+
+Shebang at the beginning of the line:
+
+    >>> import os
+    >>> os.popen("head -1 7-base_geometry.py").read()
+    '#!/usr/bin/python3\n'
+
+Module documentation:
+
+    >>> __import__("7-base_geometry").__doc__ != 0
+    True
+
+Class documentation:
+
+    >>> __import__("7-base_geometry").BaseGeometry.__doc__ != 0
+    True
+
+Function documentation:
+
+    >>> __import__("7-base_geometry").BaseGeometry.integer_validator.__doc__ != 0
+    True
+
+    >>> __import__("7-base_geometry").BaseGeometry.area.__doc__ != 0
+    True
