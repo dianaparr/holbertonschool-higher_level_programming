@@ -7,7 +7,7 @@ import json
 
 def save_to_json_file(my_obj, filename):
     """ Use the module json and function
-        json.dumps() because object should be a
+        json.dump() because object should be a
         JSON representation
 
         Parameters:
