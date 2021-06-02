@@ -2,6 +2,8 @@
 """
 Function that returns the dictionary description
 """
+
+
 def class_to_json(obj):
     """ Use attribute magic __dict__
 
