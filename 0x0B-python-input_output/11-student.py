@@ -33,7 +33,9 @@ class Student:
                     dict_json[a] = self.__dict__[a]
             return dict_json
 
-    """ """
+    """ Public method that replaces all attributes of the
+        Student instance
+    """
     def reload_from_json(self, json):
         for name, value in json.items():
             setattr(self, name, value)
