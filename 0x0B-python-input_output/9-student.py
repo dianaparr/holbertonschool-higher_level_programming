@@ -8,7 +8,7 @@ class Student:
     def __init__(self, first_name, last_name, age):
         """ Constructor method to initialize the attribute of the
         instantiated object with two optionals parameters:
-        
+
         Args:
             param1 (first_name): Is a public attribute, type str
             param2 (last_name): Is a public attribute, type str
@@ -18,6 +18,8 @@ class Student:
         self.last_name = last_name
         self.age = age
 
-    """ """
+    """ Public method that retrieves a dictionary representation
+        of a Student instance
+    """
     def to_json(self):
-        self.__dict__
+        return self.__dict__
