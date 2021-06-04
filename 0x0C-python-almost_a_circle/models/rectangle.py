@@ -119,4 +119,6 @@ class Rectangle(Base):
 
     def __str__(self):
         """ Overrinding the special method __str__ """
-        return "[{}] ({}) {}/{} - {}/{}".format(__class__.__name__, self.id, self.x, self.y, self.width, self.height)
+        return "[{}] ({}) {}/{} - {}/{}".format(__class__.__name__,
+                                                self.id, self.x, self.y,
+                                                self.width, self.height)
