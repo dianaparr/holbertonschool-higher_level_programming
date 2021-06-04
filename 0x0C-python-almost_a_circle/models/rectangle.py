@@ -5,11 +5,12 @@ Created a class called Rectangle inherits from Base
 
 from models.base import Base
 
+
 class Rectangle(Base):
     """ Constructor method to initialize the attribute of the
         instantiated object with four optionals parameters
         and call to the super class Base with id:
-        
+
         Args:
             width: Is a private attribute
             height: Is a private attribute
@@ -35,13 +36,13 @@ class Rectangle(Base):
     @width.setter
     def width(self, width):
         pass
-    
+
     @property
     def height(self):
         return self.__height
 
     @height.setter
-    def width(self, height):
+    def height(self, height):
         pass
 
     @property
