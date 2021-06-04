@@ -33,30 +33,74 @@ class Rectangle(Base):
     def width(self):
         return self.__width
 
+    """
+    Update attribute width
+    raising exception:
+        - TypeError if the input is not an integer
+        - ValueError if width is under or equals 0
+    """
     @width.setter
     def width(self, width):
-        self.__width = width
+        if type(width) is not int:
+            raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+        else:
+            self.__width = width
 
     @property
     def height(self):
         return self.__height
 
+    """
+    Update attribute height
+    raising exception:
+        - TypeError if the input is not an integer
+        - ValueError if height is under or equals 0
+    """
     @height.setter
     def height(self, height):
-        self.__height = height
+        if type(height) is not int:
+            raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
+        else:
+            self.__height = height
 
     @property
     def x(self):
         return self.__x
 
+    """
+    Update attribute x
+    raising exception:
+        - TypeError if the input is not an integer
+        - ValueError if x is under 0
+    """
     @x.setter
     def x(self, x):
-        self.__x = x
+        if type(x) is not int:
+            raise TypeError("x must be an integer")
+        if x < 0:
+            raise ValueError("x must be >= 0")
+        else:
+            self.__x = x
 
     @property
     def y(self):
         return self.__y
 
+    """
+    Update attribute y
+    raising exception:
+        - TypeError if the input is not an integer
+        - ValueError if y is under 0
+    """
     @y.setter
     def y(self, y):
-        self.__y = y
+        if type(y) is not int:
+            raise TypeError("y must be an integer")
+        if y < 0:
+            raise ValueError("y must be >= 0")
+        else:
+            self.__y = y
