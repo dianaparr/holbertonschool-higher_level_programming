@@ -4,7 +4,6 @@ Created a class called Base
 """
 
 import json
-from models.rectangle import Rectangle
 
 
 class Base:
@@ -89,8 +88,21 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """ """
-        # cls.__name__ == "Rectangle"
-        dummy_instance = cls(4, 6)
+        """ Class method called created
+        
+        Parameter:
+                **dictionary: used as **kwargs of the method update
+        
+        Returns:
+                returns an instance with all attributes already set
+         """
+        if cls.__name__ == "Rectangle":
+            dummy_instance = cls(40, 6)
+        if cls.__name__ == "Square":
+            dummy_instance = cls(85)    
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    @classmethod
+    def load_from_file(cls):
+        """ """
