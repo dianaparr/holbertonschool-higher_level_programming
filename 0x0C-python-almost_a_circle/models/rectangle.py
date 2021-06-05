@@ -129,7 +129,7 @@ class Rectangle(Base):
 
     def update(self, *args, **kwargs):
         """ Public method 'update'
-        that assigns a key/value argument to attributes """ 
+        that assigns a key/value argument to attributes """
         if args:
             # create a list which the "keys" or attributes in order
             list_of_key = ["id", "width", "height", "x", "y"]
@@ -143,4 +143,5 @@ class Rectangle(Base):
         """ Public method that returns the returns
         the dictionary representation of a Rectangle
         """
-        return dict(id=self.id, width=self.width, height=self.height, x=self.x, y=self.y)
+        return dict(id=self.id, width=self.width,
+                    height=self.height, x=self.x, y=self.y)
