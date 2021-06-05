@@ -113,7 +113,8 @@ class Rectangle(Base):
 
     def display(self):
         """ Public method 'display'
-            Prints in stdout the character '#' """
+            Prints in stdout the character '#'
+            by taking care of x and y """
         for s in range(self.__y):
             print("")
         for i in range(self.__height):
