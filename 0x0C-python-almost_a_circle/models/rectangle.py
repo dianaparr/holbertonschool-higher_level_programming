@@ -127,10 +127,14 @@ class Rectangle(Base):
                                                 self.id, self.x, self.y,
                                                 self.width, self.height)
 
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         """ Public method 'update'
-        that assigns an argument to each argument """
-        # create a list which the "keys" or attributes in order 
-        list_of_key = ["id", "width", "height", "x", "y"]
-        for a in range(len(args)):
-            setattr(self, list_of_key[a], args[a])
+        that assigns a key/value argument to attributes """ 
+        if args is not None:
+            # create a list which the "keys" or attributes in order
+            list_of_key = ["id", "width", "height", "x", "y"]
+            for a in range(len(args)):
+                setattr(self, list_of_key[a], args[a])
+
+        for name, value in kwargs.items():
+            setattr(self, name, value)
