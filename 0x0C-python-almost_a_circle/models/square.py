@@ -21,13 +21,23 @@ class Square(Rectangle):
     def __str__(self):
         """ Overrinding the special method __str__ """
         return "[{}] ({}) {}/{} - {}".format(__class__.__name__,
-                                                self.id, self.x, self.y,
-                                                self.width)
+                                             self.id, self.x, self.y,
+                                             self.width)
 
+    """
+    Private instance attribute, with public
+    getter and setter
+    """
     @property
     def size(self):
         return self.width
 
+    """
+    Update attribute width
+    raising exception:
+        - TypeError if the input is not an integer
+        - ValueError if width is under or equals 0
+    """
     @size.setter
     def size(self, size):
         if type(size) is not int:
