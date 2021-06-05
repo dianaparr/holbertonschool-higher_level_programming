@@ -138,3 +138,9 @@ class Rectangle(Base):
         else:
             for name, value in kwargs.items():
                 setattr(self, name, value)
+
+    def to_dictionary(self):
+        """ Public method that returns the returns
+        the dictionary representation of a Rectangle
+        """
+        return dict(id=self.id, width=self.width, height=self.height, x=self.x, y=self.y)
