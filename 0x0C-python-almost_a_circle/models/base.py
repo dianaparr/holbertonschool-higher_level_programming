@@ -4,6 +4,7 @@ Created a class called Base
 """
 
 import json
+from os import path
 
 
 class Base:
@@ -106,3 +107,12 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ """
+        list_create = list()
+        if not path.exists("{}.json".format(cls.__name__)):
+            return list_create
+        else:
+            with open("{}.json".format(cls.__name__, mode='r')) as f:
+                list_dict = cls.from_json_string(json.load(f))
+                for d in list_dict:
+                    list_create.append(cls.create(**d))
+            return list_create
