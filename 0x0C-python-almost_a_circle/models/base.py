@@ -4,6 +4,7 @@ Created a class called Base
 """
 
 import json
+from models.rectangle import Rectangle
 
 
 class Base:
@@ -85,3 +86,11 @@ class Base:
         else:
             repre_json = json.loads(json_string)
             return repre_json
+
+    @classmethod
+    def create(cls, **dictionary):
+        """ """
+        # cls.__name__ == "Rectangle"
+        dummy_instance = cls(4, 6)
+        dummy_instance.update(**dictionary)
+        return dummy_instance
