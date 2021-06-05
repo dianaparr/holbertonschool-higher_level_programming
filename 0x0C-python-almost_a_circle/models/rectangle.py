@@ -126,3 +126,11 @@ class Rectangle(Base):
         return "[{}] ({}) {}/{} - {}/{}".format(__class__.__name__,
                                                 self.id, self.x, self.y,
                                                 self.width, self.height)
+
+    def update(self, *args):
+        """ Public method 'update'
+        that assigns an argument to each argument """
+        # create a list which the "keys" or attributes in order 
+        list_of_key = ["id", "width", "height", "x", "y"]
+        for a in range(len(args)):
+            setattr(self, list_of_key[a], args[a])
