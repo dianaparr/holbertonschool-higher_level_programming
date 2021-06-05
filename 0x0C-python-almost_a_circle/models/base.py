@@ -73,7 +73,7 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """ Static method using the json.load() method
+        """ Static method using the json.loads() method
         that allows you to deserialize Python objects as a str
 
         Parameter:
@@ -90,23 +90,23 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Class method called created
-        
+
         Parameter:
                 **dictionary: used as **kwargs of the method update
-        
+
         Returns:
                 returns an instance with all attributes already set
          """
         if cls.__name__ == "Rectangle":
             dummy_instance = cls(40, 6)
         if cls.__name__ == "Square":
-            dummy_instance = cls(85)    
+            dummy_instance = cls(85)
         dummy_instance.update(**dictionary)
         return dummy_instance
 
     @classmethod
     def load_from_file(cls):
-        """ """
+        """ Class method return a list of instances """
         list_create = list()
         if not path.exists("{}.json".format(cls.__name__)):
             return list_create
