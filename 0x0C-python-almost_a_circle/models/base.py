@@ -69,3 +69,19 @@ class Base:
             Base.to_json_string(create_list)
         with open("{}.json".format(cls.__name__), mode='w') as f:
             json.dump(create_list, f)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """ Static method using the json.load() method
+        that allows you to deserialize Python objects as a str
+
+        Parameter:
+                json_string: string representing a list of dictionaries
+
+        Returns: the list of the JSON string representation
+        """
+        if not json_string:
+            return []
+        else:
+            repre_json = json.loads(json_string)
+            return repre_json
