@@ -45,7 +45,7 @@ class Base:
                 JSON string representation of list_dictionaries
         """
         if not list_dictionaries:
-            return []
+            return "[]"
         else:
             list_dict = json.dumps(list_dictionaries)
             return list_dict
