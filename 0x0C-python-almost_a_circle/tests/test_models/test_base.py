@@ -75,10 +75,18 @@ class TestBaseCases(unittest.TestCase):
 
     def test_save_to_file_list_obj_none(self):
         """ List of instances is None return list empty """
-        r1 = Rectangle(10, 7, 2, 8)
-        r2 = Rectangle(2, 4)
-        self.assertEqual(type(Base.save_to_file([r1, r2])), list)
+        list_empty = None
+        self.assertTrue(type(Base.save_to_file(list_empty)), [])
 
+    def test_from_json_string_repre(self):
+        """ Checks a list of JSON string representation """
+        repre_json = [{'id': 70, 'width': 5, 'height': 8},
+                      {'id': 3, 'width': 2, 'height': 5}]
+        json_in = Rectangle.to_json_string(repre_json)
+        json_return = Rectangle.from_json_string(json_in)
+        self.assertEqual(type(json_in), str)
+        self.assertEqual(type(repre_json), list)
+        self.assertEqual(type(json_return), list)
 
 if __name__ == "__main__":
     unittest.main()
