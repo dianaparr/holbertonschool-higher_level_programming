@@ -50,7 +50,18 @@ class TestBaseCases(unittest.TestCase):
     """ Create a tests for the base class in edge cases """
     def test_private_class(self):
         """ __nb_objects initialized in zero """
-        self.assertEqual(Base._Base__nb_objects, 0)
+        # self.assertEqual(Base._Base__nb_objects, 0)
+        self.assertNotEqual(Base._Base__nb_objects, 5)
+
+    def test_attribute_id(self):
+        """ Check to the id number, nb objects increments
+        with number of instances """
+        one = Base()
+        self.assertEqual(one.id, 1)
+        two = Base()
+        self.assertEqual(two.id, 2)
+        three = Base()
+        self.assertEqual(three.id, 3)
 
     def test_to_json_string_return_str(self):
         """ Type json string """

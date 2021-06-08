@@ -5,7 +5,7 @@ import os
 import unittest
 from models.rectangle import Rectangle
 import models.rectangle
-import json
+# import json
 
 
 class TestRectangle(unittest.TestCase):
@@ -42,6 +42,30 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(len(Rectangle.__str__.__doc__) != 0)
         self.assertTrue(len(Rectangle.update.__doc__) != 0)
         self.assertTrue(len(Rectangle.to_dictionary.__doc__) != 0)
+
+
+class TestRectangleCases(unittest.TestCase):
+    """ Create a tests for the rectangle class in edge cases """
+    def raise_must_be_integer(self):
+        """ Expects it to be of type integer """
+        msg = " must be an integer"
+        try:
+            Rectangle(10, "2")
+        except TypeError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+        try:
+            Rectangle("l", 6)
+        except TypeError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+        try:
+            Rectangle(4, 6, "x")
+        except TypeError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+        try:
+            Rectangle(4, 6, 1, "y")
+        except TypeError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+
 
 if __name__ == "__main__":
     unittest.main()
