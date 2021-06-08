@@ -108,11 +108,11 @@ class Base:
     def load_from_file(cls):
         """ Class method return a list of instances """
         list_create = list()
-        if not path.exists("{}.json".format(cls.__name__)):
-            return list_create
-        else:
+        if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__, mode='r')) as f:
                 list_dict = cls.from_json_string(json.load(f))
                 for d in list_dict:
                     list_create.append(cls.create(**d))
+            return list_create
+        else:
             return list_create
