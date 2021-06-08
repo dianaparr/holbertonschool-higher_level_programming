@@ -6,7 +6,7 @@ import os
 import unittest
 from models.base import Base
 import models.base
-import json
+# import json
 
 
 class TestBaseDoc(unittest.TestCase):
@@ -87,6 +87,16 @@ class TestBaseCases(unittest.TestCase):
         self.assertEqual(type(json_in), str)
         self.assertEqual(type(repre_json), list)
         self.assertEqual(type(json_return), list)
+
+    def test_from_json_string_repre_failed(self):
+        """ Failure in the input data type """
+        repre_json = [{"id": 70, "width": 5, "height": 8},
+                      {"id": 3, "width": 2, "height": 5}]
+        data_in = Rectangle.to_json_string(repre_json)
+        json_return = Rectangle.from_json_string(data_in)
+        self.assertTrue(type(data_in), list)
+        self.assertTrue(type(json_return), str)
+
 
 if __name__ == "__main__":
     unittest.main()
