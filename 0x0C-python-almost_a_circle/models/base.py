@@ -107,7 +107,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ Class method return a list of instances """
-        list_create = list()
+        list_create = []
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__, mode='r')) as f:
                 list_dict = cls.from_json_string(json.load(f))
