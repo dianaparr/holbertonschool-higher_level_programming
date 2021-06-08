@@ -62,11 +62,11 @@ class Base:
         create_list = []
         if not list_objs:
             with open("{}.json".format(cls.__name__), mode='w') as f:
-                json.dump(list_objs, f)
+                json.dump(create_list, f)
         else:
             for a in list_objs:
                 # to_instan = cls(a.width, a.height, a.x, a.y, a.id)
-                create_list.append(vars(a))
+                create_list.append(a.to_dictionary())
             Base.to_json_string(create_list)
         with open("{}.json".format(cls.__name__), mode='w') as f:
             json.dump(create_list, f)
@@ -107,7 +107,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ Class method return a list of instances """
-        list_create = []
+        list_create = list()
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__, mode='r')) as f:
                 list_dict = cls.from_json_string(json.load(f))
