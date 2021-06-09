@@ -3,8 +3,9 @@
 """
 from models.base import Base
 import os
-import unittest
 import io
+import sys
+import unittest
 from models.rectangle import Rectangle
 import models.rectangle
 # import json
@@ -111,6 +112,33 @@ class TestRectangleCases(unittest.TestCase):
         inst = Rectangle(4, 5)
         self.assertEqual(inst.area(), 20)
 
+    def test_display_zero(self):
+        """ Check print in stdout the character '#' """
+        display_output = Rectangle(5, 5)
+        display_str = "#####\n#####\n#####\n#####\n#####\n"
+        output = io.StringIO()
+        sys.stdout = output
+        display_output.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), display_str)
+        output.flush()
 
+    def test_str(self):
+        """ Output representation informal form """
+        inst = Rectangle(5, 8, 1, 12, 5)
+        self.assertEqual(inst.__str__(), "[Rectangle] (5) 1/12 - 5/8")
+
+    def test_display_one(self):
+        """ Check print in stdout the character '#' x and y """
+        display_output = Rectangle(5, 5, 1, 0)
+        display_str = " #####\n #####\n #####\n #####\n #####\n"
+        output = io.StringIO()
+        sys.stdout = output
+        display_output.display()
+        sys.stdout = sys.__stdout__
+        self.assertEqual(output.getvalue(), display_str)
+        output.flush()
+
+    
 if __name__ == "__main__":
     unittest.main()

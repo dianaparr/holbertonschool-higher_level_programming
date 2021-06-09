@@ -127,11 +127,6 @@ class TestBaseCases(unittest.TestCase):
         self.assertTrue(type(data_in), list)
         self.assertTrue(type(json_return), str)
 
-    def test_display(self):
-        """ Check print in stdout the character '#' """
-        display_output = Rectangle(5, 5)
-        display_output.display()
-
 
 if __name__ == "__main__":
     unittest.main()
