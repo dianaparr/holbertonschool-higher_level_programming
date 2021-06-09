@@ -147,6 +147,17 @@ class TestRectangleCases(unittest.TestCase):
         self.assertEqual(inst.y, 2)
         self.assertEqual(inst.id, 34)
 
+    def test_to_dictionary_rectangle(self):
+        """ Check returns the dictionary representation """
+        inst = Rectangle(5, 8)
+        self.assertEqual(inst.to_dictionary(), {'x': 0, 'y': 0, 'id': 14,
+                                                'height': 8, 'width': 5})
+        inst_two = Rectangle(5, 8, 9)
+        self.assertEqual(inst_two.to_dictionary(), {'x': 9, 'y': 0, 'id': 15,
+                                                    'height': 8, 'width': 5})
+        inst_three = Rectangle(5, 8, 9, 4)
+        self.assertEqual(inst_three.to_dictionary(), {'x': 9, 'y': 4, 'id': 16,
+                                                      'height': 8, 'width': 5})
 
 if __name__ == "__main__":
     unittest.main()

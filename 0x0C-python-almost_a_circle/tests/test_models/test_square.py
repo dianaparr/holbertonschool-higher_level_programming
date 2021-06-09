@@ -91,5 +91,14 @@ class TestSquareCases(unittest.TestCase):
         self.assertEqual(inst.y, 2)
         self.assertEqual(inst.id, 34)
 
+    def test_to_dictionary_square(self):
+        """ Check returns the dictionary representation """
+        inst = Square(5, 8, 9)
+        self.assertEqual(inst.to_dictionary(), {'x': 8, 'y': 9, 'id': 21,
+                                                'size': 5})
+        inst_three = Square(5, 8, 9, 4)
+        self.assertEqual(inst_three.to_dictionary(), {'x': 8, 'y': 9, 'id': 4,
+                                                      'size': 5})
+
 if __name__ == "__main__":
     unittest.main()
