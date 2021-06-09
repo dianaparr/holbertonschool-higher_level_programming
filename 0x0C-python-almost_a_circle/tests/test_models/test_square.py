@@ -27,6 +27,13 @@ class TestSquare(unittest.TestCase):
             b = r.splitlines()
             self.assertEqual(b[0], '#!/usr/bin/python3')
 
+    def test_shebang_test(self):
+        """ Test shebang in the front line in test file """
+        with open("tests/test_models/test_square.py", mode='r') as f:
+            r = f.read()
+            b = r.splitlines()
+            self.assertEqual(b[0], '#!/usr/bin/python3')
+
     def test_module_doc(self):
         """ Module with sufficient documentation """
         self.assertTrue(len(models.square.__doc__) != 0)

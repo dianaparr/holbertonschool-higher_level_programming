@@ -39,6 +39,13 @@ class TestBaseDoc(unittest.TestCase):
             b = r.splitlines()
             self.assertEqual(b[0], '#!/usr/bin/python3')
 
+    def test_shebang_test(self):
+        """ Test shebang in the front line in test file """
+        with open("tests/test_models/test_base.py", mode='r') as f:
+            r = f.read()
+            b = r.splitlines()
+            self.assertEqual(b[0], '#!/usr/bin/python3')
+
     def test_module_doc(self):
         """ Module with sufficient documentation """
         self.assertTrue(len(models.base.__doc__) != 0)
@@ -119,6 +126,11 @@ class TestBaseCases(unittest.TestCase):
         json_return = Rectangle.from_json_string(data_in)
         self.assertTrue(type(data_in), list)
         self.assertTrue(type(json_return), str)
+
+    def test_display(self):
+        """ Check print in stdout the character '#' """
+        display_output = Rectangle(5, 5)
+        display_output.display()
 
 
 if __name__ == "__main__":
