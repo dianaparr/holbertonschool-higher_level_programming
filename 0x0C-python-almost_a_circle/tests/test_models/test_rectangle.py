@@ -46,6 +46,11 @@ class TestRectangle(unittest.TestCase):
 
 class TestRectangleCases(unittest.TestCase):
     """ Create a tests for the rectangle class in edge cases """
+    def all_attributes(self):
+        """ All attributes class Rectangle """
+        inst = Rectangle(3, 6, 8, 12, 6)
+        self.assertEqual(Rectangle(inst), 3, 6, 8, 12, 6)
+
     def raise_must_be_integer(self):
         """ Expects it to be of type integer """
         msg = " must be an integer"
@@ -66,6 +71,41 @@ class TestRectangleCases(unittest.TestCase):
         except TypeError as attr:
             self.assertEqual(attr.__class__.__name__ + msg)
 
+    def raise_equal_zero(self):
+        """ Expects it not to be under or equals 0, height
+        and width """
+        msg = " must be > 0"
+        try:
+            Rectangle(-10, 2)
+        except ValueError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+        try:
+            Rectangle(10, -2)
+        except ValueError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+        try:
+            Rectangle(10, 2, 0)
+        except ValueError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+
+    def raise_equal_zero_x_y(self):
+        """ Expects it not to be under or equals 0, x
+        and y """
+        msg = " must be >= 0"
+        try:
+            Rectangle(10, 2, 0, -9, 0)
+        except ValueError as attr:
+            self.assertEqual(attr.__class__.__name__ + msg)
+
+    def test_area(self):
+        """ """
+        inst = Rectangle(4, 5)
+        self.assertEqual(inst.area(), 20)
+
+    def test_area_failed(self):
+        """ """
+        inst = Rectangle(-8, 0)
+        self.a
 
 if __name__ == "__main__":
     unittest.main()

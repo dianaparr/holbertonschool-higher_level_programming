@@ -60,6 +60,8 @@ class TestBaseCases(unittest.TestCase):
         self.assertEqual(one.id, 1)
         two = Base()
         self.assertEqual(two.id, 2)
+        other_ins = Base(40)
+        self.assertEqual(other_ins.id, 40)
         three = Base()
         self.assertEqual(three.id, 3)
 
