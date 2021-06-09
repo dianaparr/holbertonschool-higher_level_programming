@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """Import unittest and created a class for unit test
 """
+from models.base import Base
 import os
 import unittest
+import io
 from models.rectangle import Rectangle
 import models.rectangle
 # import json
@@ -98,14 +100,10 @@ class TestRectangleCases(unittest.TestCase):
             self.assertEqual(attr.__class__.__name__ + msg)
 
     def test_area(self):
-        """ """
+        """ Area check correct """
         inst = Rectangle(4, 5)
         self.assertEqual(inst.area(), 20)
 
-    def test_area_failed(self):
-        """ """
-        inst = Rectangle(-8, 0)
-        self.a
 
 if __name__ == "__main__":
     unittest.main()

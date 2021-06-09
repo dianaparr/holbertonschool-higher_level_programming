@@ -12,6 +12,16 @@ import models.base
 class TestBaseDoc(unittest.TestCase):
     """ Create a tests for the base class in documentation
     and requirements """
+    def test_readme(self):
+        """ Created a readme and that exists """
+        the_readme = os.getcwd()
+        readme_one = the_readme + '/README.md'
+        readme_two = os.path.exists(readme_one)
+        self.assertTrue(readme_two, True)
+        with open(readme_one, mode='r') as f:
+            r = f.read()
+            self.assertTrue(len(r) != 0)
+
     def test_style_pep8_model(self):
         """ PEP8 python style """
         a = os.system("pep8 models/base.py")
