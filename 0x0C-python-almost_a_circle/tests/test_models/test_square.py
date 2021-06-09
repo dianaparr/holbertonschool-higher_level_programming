@@ -5,7 +5,7 @@ import os
 import unittest
 from models.square import Square
 import models.square
-import json
+# import json
 
 
 class TestSquare(unittest.TestCase):
@@ -48,6 +48,20 @@ class TestSquare(unittest.TestCase):
         self.assertTrue(len(Square.update.__doc__) != 0)
         self.assertTrue(len(Square.to_dictionary.__doc__) != 0)
 
+
+class TestSquareCases(unittest.TestCase):
+    """ Create a tests for the square class in edge cases """
+    def test_all_attributes_square(self):
+        """ All attributes class Square """
+        inst = Square(6, 12, 6)
+        self.assertEqual(inst.size, 6)
+        self.assertEqual(inst.x, 12)
+        self.assertEqual(inst.y, 6)
+
+    def test_str_square(self):
+        """ Output representation informal form """
+        inst = Square(5, 8, 1)
+        self.assertEqual(inst.__str__(), "[Square] (17) 8/1 - 5")
 
 if __name__ == "__main__":
     unittest.main()

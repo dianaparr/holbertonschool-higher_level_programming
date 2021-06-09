@@ -56,56 +56,38 @@ class TestRectangle(unittest.TestCase):
 
 class TestRectangleCases(unittest.TestCase):
     """ Create a tests for the rectangle class in edge cases """
-    def all_attributes(self):
+    def test_all_attributes(self):
         """ All attributes class Rectangle """
-        inst = Rectangle(3, 6, 8, 12, 6)
-        self.assertEqual(Rectangle(inst), 3, 6, 8, 12, 6)
+        inst = Rectangle(6, 8, 12, 6)
+        self.assertEqual(inst.width, 6)
+        self.assertEqual(inst.height, 8)
+        self.assertEqual(inst.x, 12)
+        self.assertEqual(inst.y, 6)
 
-    def raise_must_be_integer(self):
+    def test_raise_must_be_integer(self):
         """ Expects it to be of type integer """
-        msg = " must be an integer"
-        try:
+        with self.assertRaises(TypeError):
             Rectangle(10, "2")
-        except TypeError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
-        try:
+        with self.assertRaises(TypeError):
             Rectangle("l", 6)
-        except TypeError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
-        try:
+        with self.assertRaises(TypeError):
             Rectangle(4, 6, "x")
-        except TypeError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
-        try:
+        with self.assertRaises(TypeError):
             Rectangle(4, 6, 1, "y")
-        except TypeError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
 
-    def raise_equal_zero(self):
+    def test_raise_equal_zero(self):
         """ Expects it not to be under or equals 0, height
         and width """
-        msg = " must be > 0"
-        try:
+        with self.assertRaises(ValueError):
             Rectangle(-10, 2)
-        except ValueError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
-        try:
+        with self.assertRaises(ValueError):
             Rectangle(10, -2)
-        except ValueError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
-        try:
-            Rectangle(10, 2, 0)
-        except ValueError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
 
-    def raise_equal_zero_x_y(self):
+    def test_raise_equal_zero_x_y(self):
         """ Expects it not to be under or equals 0, x
         and y """
-        msg = " must be >= 0"
-        try:
+        with self.assertRaises(ValueError):
             Rectangle(10, 2, 0, -9, 0)
-        except ValueError as attr:
-            self.assertEqual(attr.__class__.__name__ + msg)
 
     def test_area(self):
         """ Area check correct """
@@ -123,7 +105,7 @@ class TestRectangleCases(unittest.TestCase):
         self.assertEqual(output.getvalue(), display_str)
         output.flush()
 
-    def test_str(self):
+    def test_str_rectangle(self):
         """ Output representation informal form """
         inst = Rectangle(5, 8, 1, 12, 5)
         self.assertEqual(inst.__str__(), "[Rectangle] (5) 1/12 - 5/8")
@@ -139,6 +121,32 @@ class TestRectangleCases(unittest.TestCase):
         self.assertEqual(output.getvalue(), display_str)
         output.flush()
 
-    
+    def test_update_args(self):
+        """ Update value of the attributes """
+        inst = Rectangle(6, 6, 6, 6)
+        inst.update(4)
+        self.assertEqual(inst.id, 4)
+        inst.update(4, 9)
+        self.assertEqual(inst.width, 9)
+        inst.update(4, 9, 1)
+        self.assertEqual(inst.height, 1)
+        inst.update(4, 9, 1, 3)
+        self.assertEqual(inst.x, 3)
+        inst.update(4, 9, 1, 3, 11)
+        self.assertEqual(inst.y, 11)
+
+    def test_update_kwargs(self):
+        """ Update value with the key of the attributes """
+        inst = Rectangle(6, 6, 6, 6)
+        inst.update(y=5)
+        self.assertEqual(inst.y, 5)
+        inst.update(height=9, x=1, y=2, id=34)
+        self.assertEqual(inst.width, 6)
+        self.assertEqual(inst.height, 9)
+        self.assertEqual(inst.x, 1)
+        self.assertEqual(inst.y, 2)
+        self.assertEqual(inst.id, 34)
+
+
 if __name__ == "__main__":
     unittest.main()
