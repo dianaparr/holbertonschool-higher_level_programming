@@ -110,7 +110,7 @@ class Base:
         list_create = list()
         if path.exists("{}.json".format(cls.__name__)):
             with open("{}.json".format(cls.__name__, mode='r')) as f:
-                list_dict = cls.from_json_string(json.load(f))
+                list_dict = cls.from_json_string(f.read())
                 for d in list_dict:
                     list_create.append(cls.create(**d))
             return list_create
