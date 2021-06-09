@@ -60,8 +60,37 @@ class TestSquareCases(unittest.TestCase):
 
     def test_str_square(self):
         """ Output representation informal form """
-        inst = Square(5, 8, 1)
-        self.assertEqual(inst.__str__(), "[Square] (17) 8/1 - 5")
+        inst = Square(5, 8, 1, 1)
+        self.assertEqual(inst.__str__(), "[Square] (1) 8/1 - 5")
+
+    def test_size(self):
+        """ Check of type width """
+        with self.assertRaises(TypeError):
+            Square("4")
+
+    def test_update_args(self):
+        """ Update value of the attributes """
+        inst = Square(6, 6, 6, 6)
+        inst.update(4)
+        self.assertEqual(inst.id, 4)
+        inst.update(4, 9)
+        self.assertEqual(inst.size, 9)
+        inst.update(4, 9, 1)
+        self.assertEqual(inst.x, 1)
+        inst.update(4, 9, 1, 3)
+        self.assertEqual(inst.y, 3)
+
+    def test_update_kwargs_square(self):
+        """ Update value with the key of the attributes """
+        inst = Square(6, 6, 6, 6)
+        inst.update(y=5)
+        self.assertEqual(inst.y, 5)
+        inst.update(height=9, x=1, y=2, id=34)
+        self.assertEqual(inst.width, 6)
+        self.assertEqual(inst.height, 9)
+        self.assertEqual(inst.x, 1)
+        self.assertEqual(inst.y, 2)
+        self.assertEqual(inst.id, 34)
 
 if __name__ == "__main__":
     unittest.main()
