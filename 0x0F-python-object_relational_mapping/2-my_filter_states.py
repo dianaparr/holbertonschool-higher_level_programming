@@ -30,7 +30,8 @@ if __name__ == '__main__':
                                 port=3306, charset="utf8", )
     # Query to DB using execute method of the created cursor
     cursor = connectDB.cursor()
-    queryDB = "SELECT * FROM states WHERE name='{}' ORDER BY id ASC".format(inputSearch)
+    queryDB = "SELECT * FROM states WHERE name='{}' \
+                ORDER BY id ASC".format(inputSearch)
     cursor.execute(queryDB)
     # Read operation
     listAll = cursor.fetchall()
