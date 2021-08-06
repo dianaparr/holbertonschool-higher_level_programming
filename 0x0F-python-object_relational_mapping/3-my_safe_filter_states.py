@@ -23,16 +23,16 @@ if __name__ == '__main__':
                          query with the user input.
             fetchall() -> It fetches all the rows in a result set
     """
-    # The name must be matches the argument
-    inputSearch = argv[4]
     # Data base connection
     connectDB = MySQLdb.connect(host="localhost", user=argv[1],
                                 passwd=argv[2], db=argv[3],
                                 port=3306, charset="utf8", )
     # Query to DB using execute method of the created cursor
     cursor = connectDB.cursor()
+    # The name must be matches the argument
+    inputSearch = argv[4]
     # Query safe for oyu to execute, is passed as a named parameter
-    queryDB = "SELECT * FROM states WHERE %s \
+    queryDB = "SELECT * FROM states WHERE name=%s \
                 ORDER BY id ASC"
     cursor.execute(queryDB, (inputSearch,))
     # Read operation
