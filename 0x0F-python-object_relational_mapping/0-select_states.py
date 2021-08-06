@@ -5,7 +5,8 @@ Module of python called 0-select states
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
+
+def main():
     """ Lists all states from the database hbtn_0e_0usa
 
         Connecting, creating and read a MySQL DB - methods:
@@ -34,3 +35,6 @@ if __name__ == '__main__':
         print(row)
     # Closing the connection
     connectDB.close()
+
+if __name__ == '__main__':
+    main()
