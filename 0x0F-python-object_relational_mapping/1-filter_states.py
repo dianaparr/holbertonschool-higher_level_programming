@@ -5,7 +5,8 @@ Module of python called 1-filter_states
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
+
+def main():
     """ Lists all states with a name starting with N (upper N)
         from the database hbtn_0e_0_usa
 
@@ -35,3 +36,6 @@ if __name__ == '__main__':
         print(row)
     # Closing the connection
     connectDB.close()
+
+if __name__ == '__main__':
+    main()
