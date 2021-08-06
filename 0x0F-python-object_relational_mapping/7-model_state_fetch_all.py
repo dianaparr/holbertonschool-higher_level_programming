@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-""" """
+"""
+Module of python called model_state_fetch_all
+"""
 from sys import argv
 from model_state import Base, State
 from sqlalchemy import create_engine
