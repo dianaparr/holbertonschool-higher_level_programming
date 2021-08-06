@@ -5,7 +5,8 @@ Module of python called 4-cities_by_state
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
+
+def main():
     """ Lists all cities from the database hbtn_0e_4_usa
 
         Connecting, creating and read a MySQL DB - methods:
@@ -38,3 +39,6 @@ if __name__ == '__main__':
         print(row)
     # Closing the connection
     connectDB.close()
+
+if __name__ == '__main__':
+    main()
