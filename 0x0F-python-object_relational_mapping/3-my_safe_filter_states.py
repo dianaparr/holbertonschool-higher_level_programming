@@ -5,7 +5,7 @@ Module of python called 3-my_safe_filter_states
 import MySQLdb
 from sys import argv
 
-if __name__ == '__main__':
+def main():
     """ Takes in an argument and displays all values in the states table
         of hbtn_0e_0_usa where name matches the argument, that is safe from
         MySQL injections.
@@ -41,3 +41,6 @@ if __name__ == '__main__':
         print(row)
     # Closing the connection
     connectDB.close()
+
+if __name__ == '__main__':
+    main()
