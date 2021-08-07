@@ -6,7 +6,7 @@ import MySQLdb
 from sys import argv
 
 
-def main():
+if __name__ == '__main__':
     """ Lists all states from the database hbtn_0e_0usa
 
         Connecting, creating and read a MySQL DB - methods:
@@ -35,6 +35,3 @@ def main():
         print(row)
     # Closing the connection
     connectDB.close()
-
-if __name__ == '__main__':
-    main()
