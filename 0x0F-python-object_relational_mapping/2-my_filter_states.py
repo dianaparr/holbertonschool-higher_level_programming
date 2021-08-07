@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """
 Module of python called 2-my_filter_states
 """
@@ -31,7 +31,7 @@ def main():
                                 port=3306, charset="utf8", )
     # Query to DB using execute method of the created cursor
     cursor = connectDB.cursor()
-    queryDB = "SELECT * FROM states WHERE name='{}' \
+    queryDB = "SELECT * FROM states WHERE BINARY name='{}' \
                 ORDER BY id ASC".format(inputSearch)
     cursor.execute(queryDB)
     # Read operation
