@@ -24,7 +24,7 @@ def main():
     # Data base connection
     connectDB = MySQLdb.connect(host="localhost", user=argv[1],
                                 passwd=argv[2], db=argv[3],
-                                port=3306, charset="utf8")
+                                port=3306)
     # Query to DB using execute method of the created cursor
     cursor = connectDB.cursor()
     queryDB = "SELECT * FROM states ORDER BY id ASC"
