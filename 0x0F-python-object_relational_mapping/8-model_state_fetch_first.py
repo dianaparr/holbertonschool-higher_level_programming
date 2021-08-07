@@ -9,7 +9,7 @@ from sqlalchemy.orm import sessionmaker, Session
 
 
 def main():
-    """ Lists all State objects from the database hbtn_0e_6_usa
+    """ Prints the first State object from the database hbtn_0e_6_usa
 
         The basic functionality of SQLAlchemy, which is the SQL expression
         language, is used, to create some metadata that will contain a series
