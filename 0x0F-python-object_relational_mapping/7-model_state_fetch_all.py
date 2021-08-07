@@ -7,7 +7,7 @@ from model_state import Base, State
 from sqlalchemy import (create_engine)
 from sqlalchemy.orm import sessionmaker, Session
 
-def main():
+if __name__ == "__main__":
     """ Lists all State objects from the database hbtn_0e_6_usa
 
         The basic functionality of SQLAlchemy, which is the SQL expression
@@ -37,6 +37,3 @@ def main():
         print("{}: {}".format(row.id, row.name))
 
     session.close()
-
-if __name__ == "__main__":
-    main()
