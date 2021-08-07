@@ -7,20 +7,6 @@ from sys import argv
 
 
 if __name__ == '__main__':
-    """ Lists all states from the database hbtn_0e_0usa
-
-        Connecting, creating and read a MySQL DB - methods:
-            connect(parameters...) -> Use constructor for creating
-                                      a connection to the DB that take
-                                      3 arguments of the command line:
-                                      [1]: username, [2]: password and
-                                      [3]: DB name.
-            cursor() -> The MySQLCursor class instantiates objects that can
-                        execute operations such as SQL statements
-            execute() -> Executes the given database operation
-                         (query or command)
-            fetchall() -> It fetches all the rows in a result set
-    """
     # Data base connection
     connectDB = MySQLdb.connect(host="localhost", user=argv[1],
                                 passwd=argv[2], db=argv[3],
