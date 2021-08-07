@@ -28,7 +28,8 @@ def main():
                                 port=3306, charset="utf8")
     # Query to DB using execute method of the created cursor
     cursor = connectDB.cursor()
-    queryDB = "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
+    queryDB = "SELECT * FROM states WHERE name LIKE BINARY 'N%' \
+               ORDER BY id ASC"
     cursor.execute(queryDB)
     # Read operation
     listAll = cursor.fetchall()
