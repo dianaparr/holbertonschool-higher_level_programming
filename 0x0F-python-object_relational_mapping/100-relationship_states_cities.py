@@ -36,10 +36,9 @@ def main():
 
     # Add new data and send to DB
     newDataState = State(name="California")
-    newDataCity = City(name="San Francisco")
+    # Add state in this city
+    newDataCity = City(name="San Francisco", state=newDataState)
 
-    # Collection attribute append() method. (Adding a city to state)
-    newDataState.cities.append(newDataCity)
     session.add(newDataState)
     session.add(newDataCity)
     session.commit()

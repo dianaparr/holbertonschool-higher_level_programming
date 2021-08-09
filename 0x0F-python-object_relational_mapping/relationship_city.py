@@ -2,14 +2,8 @@
 """
 Module of python called relationship_city
 """
-from model_state import Base, State
 from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import relationship
 from relationship_state import Base, State
-
-# returns a new base class from which all mapped classes should inherit
-Base = declarative_base()
 
 
 class City(Base):
@@ -29,4 +23,3 @@ class City(Base):
     id = Column(Integer, primary_key=True, autoincrement=True)
     name = Column(String(128), nullable=False)
     state_id = Column(Integer, ForeignKey('states.id'), nullable=False)
-    relToState = relationship("State", cascade="save-update")
