@@ -7,7 +7,7 @@ from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 
-# returns a new base class from which all mapped classes should inherit
+# returns a new base class from which all mapped classes should inherit....
 Base = declarative_base()
 
 
