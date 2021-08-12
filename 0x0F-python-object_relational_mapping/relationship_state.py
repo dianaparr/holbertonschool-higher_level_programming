@@ -28,4 +28,4 @@ class State(Base):
     # "The delete-orphan and all symbols indicates that the child object should
     # follow along with its parent in all cases, and be deleted once it is no
     # longer associated with that parent"
-    relToCities = relationship("City", backref="state", cascade="all, delete-orphan")
+    relToCities = relationship("City", backref="state", cascade="all, delete")
