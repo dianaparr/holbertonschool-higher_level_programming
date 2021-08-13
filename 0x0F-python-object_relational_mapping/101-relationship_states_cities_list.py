@@ -35,15 +35,16 @@ def main():
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    # Querying data:
+    # # Querying data:
     list_queryDB = session.query(State).order_by(State.id)
     # print(list_queryDB)
 
     for elementState in list_queryDB:
         print("{}: {}".format(elementState.id, elementState.name))
-        print("{}-----elest".format(elementState))
-        # for elementCity in elementState:
-        #     print("\t{}: {}".format(elementCity.id, elementCity.name))
+        # print("{}-----state".format(elementState))
+        for elementCity in elementState.cities:
+            print("\t{}: {}".format(elementCity.id, elementCity.name))
+            # print("{}----city".format(elementState.cities))
 
     # Write changes to the database
     session.commit()
