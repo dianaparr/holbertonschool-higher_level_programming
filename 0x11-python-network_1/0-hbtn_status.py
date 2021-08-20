@@ -9,5 +9,5 @@ if __name__ == "__main__":
         print("Body response:\n\
         - type: {}\n\
         - content: {}\n\
-        - utf8 content:{}".format(
+        - utf8 content: {}".format(
             type(page), page, page.decode('utf-8')))
