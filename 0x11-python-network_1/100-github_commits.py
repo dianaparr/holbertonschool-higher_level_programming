@@ -13,5 +13,5 @@ if __name__ == "__main__":
             print("{}: {}".format(response_json[commit].get('sha'),
                                   response_json[commit].
                                   get('author').get('name')))
-    except Exception:
+    except:
         print("", end="")
