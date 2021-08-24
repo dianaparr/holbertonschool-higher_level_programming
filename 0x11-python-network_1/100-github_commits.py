@@ -2,7 +2,6 @@
 """ Script that takes 2 arguments with GitHub API
 """
 import requests
-import requests.auth
 import sys
 
 if __name__ == "__main__":
@@ -15,4 +14,4 @@ if __name__ == "__main__":
                                   response_json[commit].
                                   get('author').get('name')))
     except Exception:
-        print(end="")
+        print("", end="")
